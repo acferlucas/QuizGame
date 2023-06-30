@@ -14,10 +14,7 @@ public class QuizController  {
     }
 
     public void startQuiz() {
-        QuizStrategy[] questions = model.getQuestions();
-
-        System.out.println(questions[model.getCurrentQuestionIndex()]);
-        view.displayQuestion(questions[model.getCurrentQuestionIndex()].getQuestion());
+        view.displayQuestion(model.getCurrentQuestion().getQuestion());
     }
 
     public void submitAnswer(String userAnswer) {
