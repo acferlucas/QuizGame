@@ -1,12 +1,9 @@
 package br.com.ifpe.edu.recife.controller;
 
 import br.com.ifpe.edu.recife.model.QuizModel;
-import br.com.ifpe.edu.recife.quiz.AnswerQuizStrategy;
-import br.com.ifpe.edu.recife.view.QuizGameMenu;
-import br.com.ifpe.edu.recife.view.QuizGameUI;
-import br.com.ifpe.edu.recife.view.QuizWindow;
+import br.com.ifpe.edu.recife.view.QuizMenu;
 
-public class QuizControllerMain {
+public class Quiz {
     public static void main(String[] args) {
         /*QuizModel model = new QuizModel();
 
@@ -30,9 +27,9 @@ public class QuizControllerMain {
 
         QuizModel model = new QuizModel();
 
-        QuizGameMenu menuview = new QuizGameMenu();
-        GameController gameController = new GameController(model, menuview);
-        menuview.setController(gameController);
+        QuizMenu menuview = new QuizMenu();
+        MenuController menuController = new MenuController(model, menuview);
+        menuview.setController(menuController);
 
 
        // QuizGameUI gameView = new QuizGameUI();

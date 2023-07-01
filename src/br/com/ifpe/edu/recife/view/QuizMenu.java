@@ -1,13 +1,13 @@
 package br.com.ifpe.edu.recife.view;
 
-import br.com.ifpe.edu.recife.controller.GameController;
+import br.com.ifpe.edu.recife.controller.MenuController;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class QuizGameMenu {
+public class QuizMenu {
     private JFrame frame;
     private JLabel titleLabel;
     private JLabel optionLabel;
@@ -15,9 +15,9 @@ public class QuizGameMenu {
     private JCheckBox multipleChoiceQuizCheckBox;
     private JCheckBox textQuizCheckBox;
 
-    private GameController controller;
+    private MenuController controller;
 
-    public QuizGameMenu() {
+    public QuizMenu() {
         frame = new JFrame("Quiz Game");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(450, 250);
@@ -26,7 +26,7 @@ public class QuizGameMenu {
         frame.setLocationRelativeTo(null);
     }
 
-    public void setController(GameController controller) {
+    public void setController(MenuController controller) {
         this.controller = controller;
     }
 

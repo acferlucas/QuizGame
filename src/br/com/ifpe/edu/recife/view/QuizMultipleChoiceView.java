@@ -1,11 +1,17 @@
 package br.com.ifpe.edu.recife.view;
 
+import br.com.ifpe.edu.recife.controller.QuizMultipleChoiceController;
+import br.com.ifpe.edu.recife.quiz.MultipleChoiceQuizStrategy;
+import br.com.ifpe.edu.recife.quiz.QuizObserver;
+import br.com.ifpe.edu.recife.quiz.QuizStrategy;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class QuizMultipleChoiceView extends JFrame {
+public class QuizMultipleChoiceView implements QuizObserver {
+    private JFrame frame;
     private JLabel titleLabel;
     private JLabel questionLabel;
     private ButtonGroup answerButtonGroup;
@@ -14,41 +20,43 @@ public class QuizMultipleChoiceView extends JFrame {
     private JRadioButton option3RadioButton;
     private JRadioButton option4RadioButton;
     private JButton submitButton;
+    private QuizMultipleChoiceController controller;
 
     public QuizMultipleChoiceView() {
-        setTitle("Quiz Game");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setResizable(false);
+        frame = new JFrame("Quiz Game");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(450, 250);
+        frame.setResizable(false);
+
         initComponents();
-        pack();
-        setLocationRelativeTo(null);
+
+        frame.setLocationRelativeTo(null);
+    }
+
+    public void setController(QuizMultipleChoiceController controller) {
+        this.controller = controller;
     }
 
     private void initComponents() {
-        // Create the main panel
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
         mainPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
-        // Create the title label
-        titleLabel = new JLabel("Welcome to the Quiz Game!");
-        titleLabel.setFont(new Font("Arial", Font.BOLD, 24));
+        titleLabel = new JLabel("Bem-Vindo ao Quiz!");
+        titleLabel.setFont(new Font("Arial", Font.PLAIN, 20));
         titleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
-        titleLabel.setBorder(BorderFactory.createEmptyBorder(0, 0, 20, 0));
 
-        // Create the question label
-        questionLabel = new JLabel("Question: What is the capital of France?");
+        questionLabel = new JLabel();
         questionLabel.setFont(new Font("Arial", Font.PLAIN, 18));
         questionLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         questionLabel.setBorder(BorderFactory.createEmptyBorder(0, 0, 10, 0));
 
         // Create the answer radio buttons
-        option1RadioButton = new JRadioButton("Option 1");
-        option2RadioButton = new JRadioButton("Option 2");
-        option3RadioButton = new JRadioButton("Option 3");
-        option4RadioButton = new JRadioButton("Option 4");
+        option1RadioButton = new JRadioButton();
+        option2RadioButton = new JRadioButton();
+        option3RadioButton = new JRadioButton();
+        option4RadioButton = new JRadioButton();
 
-        // Create a button group for the answer radio buttons
         answerButtonGroup = new ButtonGroup();
         answerButtonGroup.add(option1RadioButton);
         answerButtonGroup.add(option2RadioButton);
@@ -65,12 +73,11 @@ public class QuizMultipleChoiceView extends JFrame {
                 String answer = getSelectedAnswer();
                 // Process the submitted answer here
                 // ...
-                JOptionPane.showMessageDialog(QuizMultipleChoiceView.this, "Your answer: " + answer);
+                JOptionPane.showMessageDialog(frame, "Your answer: " + answer);
                 clearSelectedAnswer();
             }
         });
 
-        // Add components to the main panel
         mainPanel.add(titleLabel);
         mainPanel.add(questionLabel);
         mainPanel.add(option1RadioButton);
@@ -80,8 +87,8 @@ public class QuizMultipleChoiceView extends JFrame {
         mainPanel.add(Box.createVerticalStrut(10));
         mainPanel.add(submitButton);
 
-        // Add the main panel to the frame's content pane
-        getContentPane().add(mainPanel);
+        frame.add(mainPanel);
+        frame.setVisible(true);
     }
 
     private String getSelectedAnswer() {
@@ -102,12 +109,27 @@ public class QuizMultipleChoiceView extends JFrame {
         answerButtonGroup.clearSelection();
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new QuizMultipleChoiceView().setVisible(true);
-            }
-        });
+    public void displayQuestion(String question, String[] options) {
+        questionLabel.setText(question);
+
+        option1RadioButton.setText(options[0]);
+        option2RadioButton.setText(options[1]);
+        option3RadioButton.setText(options[2]);
+        option4RadioButton.setText(options[3]);
+    }
+
+    public void displayScore(int score) {
+        JOptionPane.showMessageDialog(frame, "Quiz Completed!\nYour score: " + score);
+        frame.dispose();
+    }
+
+    @Override
+    public void onQuestionChanged(QuizStrategy question) {
+        displayQuestion(question.getQuestion(), ((MultipleChoiceQuizStrategy) question).getOptions());
+    }
+
+    @Override
+    public void onQuizCompleted(int score) {
+        displayScore(score);
     }
 }

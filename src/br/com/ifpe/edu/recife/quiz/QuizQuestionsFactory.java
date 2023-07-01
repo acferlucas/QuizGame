@@ -1,7 +1,7 @@
 package br.com.ifpe.edu.recife.quiz;
 
-public class QuizFactory {
-    public QuizStrategy[] createQuiz(String type) {
+public class QuizQuestionsFactory {
+    public QuizStrategy[] createQuestions(String type) {
         QuizStrategy[] questions;
 
         if(type.equals("regular")) {
@@ -13,7 +13,7 @@ public class QuizFactory {
             questions[4] = new AnswerQuizStrategy("Quanto é 4 + 4", "8");
         }else {
             questions = new MultipleChoiceQuizStrategy[5];
-            String[] questionOneOptions = {"1","2", "3", "4", "5"};
+            String[] questionOneOptions = {"1","2", "3", "4"};
 
             questions[0] = new MultipleChoiceQuizStrategy("Quanto é 1 + 1",questionOneOptions, 1);
             questions[1] = new MultipleChoiceQuizStrategy("Quanto é 2 + 3",questionOneOptions, 1);
