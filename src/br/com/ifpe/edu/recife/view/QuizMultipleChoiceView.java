@@ -25,7 +25,7 @@ public class QuizMultipleChoiceView implements QuizObserver {
     public QuizMultipleChoiceView() {
         frame = new JFrame("Quiz Game");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(450, 250);
+        frame.setSize(450, 260);
         frame.setResizable(false);
 
         initComponents();
@@ -51,7 +51,6 @@ public class QuizMultipleChoiceView implements QuizObserver {
         questionLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         questionLabel.setBorder(BorderFactory.createEmptyBorder(0, 0, 10, 0));
 
-        // Create the answer radio buttons
         option1RadioButton = new JRadioButton();
         option2RadioButton = new JRadioButton();
         option3RadioButton = new JRadioButton();
@@ -63,7 +62,6 @@ public class QuizMultipleChoiceView implements QuizObserver {
         answerButtonGroup.add(option3RadioButton);
         answerButtonGroup.add(option4RadioButton);
 
-        // Create the submit button
         submitButton = new JButton("Submit");
         submitButton.setFont(new Font("Arial", Font.BOLD, 16));
         submitButton.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -71,9 +69,8 @@ public class QuizMultipleChoiceView implements QuizObserver {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String answer = getSelectedAnswer();
-                // Process the submitted answer here
-                // ...
-                JOptionPane.showMessageDialog(frame, "Your answer: " + answer);
+
+                controller.submitAnswer(answer);
                 clearSelectedAnswer();
             }
         });
@@ -93,15 +90,15 @@ public class QuizMultipleChoiceView implements QuizObserver {
 
     private String getSelectedAnswer() {
         if (option1RadioButton.isSelected()) {
-            return "Option 1";
+            return "0";
         } else if (option2RadioButton.isSelected()) {
-            return "Option 2";
+            return "1";
         } else if (option3RadioButton.isSelected()) {
-            return "Option 3";
+            return "2";
         } else if (option4RadioButton.isSelected()) {
-            return "Option 4";
+            return "3";
         } else {
-            return "";
+            return "nothing";
         }
     }
 

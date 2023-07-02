@@ -13,13 +13,14 @@ public class QuizQuestionsFactory {
             questions[4] = new AnswerQuizStrategy("Quanto é 4 + 4", "8");
         }else {
             questions = new MultipleChoiceQuizStrategy[5];
-            String[] questionOneOptions = {"1","2", "3", "4"};
+            String[] mathQuestionOptions = {"1","2", "3", "5"};
+            String[] geographyQuestionOptions = {"Brazil","Paris", "Franca", "Italia"};
 
-            questions[0] = new MultipleChoiceQuizStrategy("Quanto é 1 + 1",questionOneOptions, 1);
-            questions[1] = new MultipleChoiceQuizStrategy("Quanto é 2 + 3",questionOneOptions, 1);
-            questions[2] = new MultipleChoiceQuizStrategy("Quanto é 1 + 5",questionOneOptions, 1);
-            questions[3] = new MultipleChoiceQuizStrategy("Quanto é 2 + 1",questionOneOptions, 1);
-            questions[4] = new MultipleChoiceQuizStrategy("Quanto é 9 + 1",questionOneOptions, 1);
+            questions[0] = new MultipleChoiceQuizStrategy("Quanto é 1 + 1",mathQuestionOptions, 1);
+            questions[1] = new MultipleChoiceQuizStrategy("Quanto é 2 + 3",mathQuestionOptions, 3);
+            questions[2] = new MultipleChoiceQuizStrategy("Quanto é 2 + 1",mathQuestionOptions, 2);
+            questions[3] = new MultipleChoiceQuizStrategy("Em que pais nasceu o melhor jogador do mundo pelé ?",geographyQuestionOptions, 0);
+            questions[4] = new MultipleChoiceQuizStrategy("Qual país é famoso pela pizza ?",geographyQuestionOptions, 3);
         }
 
         return questions;

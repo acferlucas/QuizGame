@@ -14,6 +14,16 @@ public class QuizMultipleChoiceController {
         this.view = view;
         this.view.setController(this);
     }
+    public void submitAnswer(String userAnswer) {
+        QuizStrategy question = model.getCurrentQuestion();
+
+        boolean isCorrect = question.checkAnswer(userAnswer);
+        if (isCorrect) {
+            model.incrementScore();
+        }
+
+        model.nextQuestion();
+    }
     public void startQuiz() {
         MultipleChoiceQuizStrategy question = (MultipleChoiceQuizStrategy) model.getCurrentQuestion();
        view.displayQuestion(question.getQuestion(), question.getOptions());

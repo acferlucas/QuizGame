@@ -18,7 +18,7 @@ public class MultipleChoiceQuizStrategy implements QuizStrategy {
 
     @Override
     public boolean checkAnswer(String userAnswer) {
-        int selectedIndex = Integer.parseInt(userAnswer) - 1;
+        int selectedIndex = Integer.parseInt(userAnswer);
         return selectedIndex == answerIndex;
     }
 

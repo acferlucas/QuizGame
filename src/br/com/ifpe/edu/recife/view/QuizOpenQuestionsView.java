@@ -1,6 +1,6 @@
 package br.com.ifpe.edu.recife.view;
+import br.com.ifpe.edu.recife.controller.QuizOpenQuestionsController;
 import br.com.ifpe.edu.recife.quiz.QuizObserver;
-import br.com.ifpe.edu.recife.controller.QuizController;
 import br.com.ifpe.edu.recife.quiz.QuizStrategy;
 
 import javax.swing.*;
@@ -8,16 +8,16 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class QuizGameUI implements QuizObserver {
+public class QuizOpenQuestionsView implements QuizObserver {
     private JFrame frame;
     private JLabel titleLabel;
     private JLabel questionLabel;
     private JTextField answerTextField;
     private JButton submitButton;
 
-    private QuizController controller;
+    private QuizOpenQuestionsController controller;
 
-    public QuizGameUI() {
+    public QuizOpenQuestionsView() {
         frame = new JFrame("Quiz Game");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(450, 200);
@@ -26,7 +26,7 @@ public class QuizGameUI implements QuizObserver {
         //frame.pack();
         frame.setLocationRelativeTo(null);
     }
-    public void setController(QuizController controller) {
+    public void setController(QuizOpenQuestionsController controller) {
         this.controller = controller;
     }
 
@@ -68,14 +68,12 @@ public class QuizGameUI implements QuizObserver {
             }
         });
 
-        // Montando tudo dentro do panel
         mainPanel.add(titleLabel);
         mainPanel.add(questionLabel);
         mainPanel.add(answerTextField);
         mainPanel.add(Box.createVerticalStrut(4));
         mainPanel.add(submitButton);
 
-        // Add the main panel to the frame's content pane
         frame.add(mainPanel);
         frame.setVisible(true);
     }

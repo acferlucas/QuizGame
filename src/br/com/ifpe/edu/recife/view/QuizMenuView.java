@@ -7,17 +7,18 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class QuizMenu {
+public class QuizMenuView {
     private JFrame frame;
     private JLabel titleLabel;
     private JLabel optionLabel;
     private JButton submitButton;
     private JCheckBox multipleChoiceQuizCheckBox;
     private JCheckBox textQuizCheckBox;
+    private JCheckBox trueFalseQuizCheckBox;
 
     private MenuController controller;
 
-    public QuizMenu() {
+    public QuizMenuView() {
         frame = new JFrame("Quiz Game");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(450, 250);
@@ -53,6 +54,10 @@ public class QuizMenu {
         multipleChoiceQuizCheckBox.setAlignmentX(Component.CENTER_ALIGNMENT);
         multipleChoiceQuizCheckBox.setFont(new Font("Arial", Font.PLAIN, 16));
 
+        trueFalseQuizCheckBox = new JCheckBox("Verdadeiro e falso");
+        trueFalseQuizCheckBox.setAlignmentX(Component.CENTER_ALIGNMENT);
+        trueFalseQuizCheckBox.setFont(new Font("Arial", Font.PLAIN, 16));
+
         submitButton = new JButton("Submit");
         submitButton.setFont(new Font("Arial", Font.BOLD, 16));
         submitButton.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -70,6 +75,7 @@ public class QuizMenu {
         mainPanel.add(optionLabel);
         mainPanel.add(textQuizCheckBox);
         mainPanel.add(multipleChoiceQuizCheckBox);
+        mainPanel.add(trueFalseQuizCheckBox);
         mainPanel.add(Box.createVerticalStrut(4));
         mainPanel.add(submitButton);
 
