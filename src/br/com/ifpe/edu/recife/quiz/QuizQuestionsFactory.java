@@ -48,14 +48,6 @@ public class QuizQuestionsFactory {
                     questions.add(new MultipleChoiceQuizStrategy(statementNode.getTextContent()
                             , optionList.toArray(new String[0]), Integer.parseInt(answerNode.getTextContent())));
                 }
-//                String[] mathQuestionOptions = {"1", "2", "3", "5"};
-//                String[] geographyQuestionOptions = {"Brazil", "Paris", "Franca", "Italia"};
-//
-//                questions.add(new MultipleChoiceQuizStrategy("Quanto é 1 + 1", mathQuestionOptions, 1));
-//                questions.add(new MultipleChoiceQuizStrategy("Quanto é 2 + 3", mathQuestionOptions, 3));
-//                questions.add(new MultipleChoiceQuizStrategy("Quanto é 2 + 1", mathQuestionOptions, 2));
-//                questions.add(new MultipleChoiceQuizStrategy("Em que pais nasceu o melhor jogador do mundo pelé ?", geographyQuestionOptions, 0));
-//                questions.add(new MultipleChoiceQuizStrategy("Qual país é famoso pela pizza ?", geographyQuestionOptions, 3));
             }
             Collections.shuffle(questions);
             return questions;
