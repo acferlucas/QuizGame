@@ -19,6 +19,7 @@ public class QuizMultipleChoiceView implements QuizObserver {
     private JRadioButton option2RadioButton;
     private JRadioButton option3RadioButton;
     private JRadioButton option4RadioButton;
+    private JRadioButton option5RadioButton;
     private JButton submitButton;
     private QuizMultipleChoiceController controller;
 
@@ -26,7 +27,7 @@ public class QuizMultipleChoiceView implements QuizObserver {
         frame = new JFrame("Quiz Game");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(450, 260);
-        frame.setResizable(false);
+        frame.setResizable(true);
 
         initComponents();
 
@@ -55,6 +56,7 @@ public class QuizMultipleChoiceView implements QuizObserver {
         option2RadioButton = new JRadioButton();
         option3RadioButton = new JRadioButton();
         option4RadioButton = new JRadioButton();
+        option5RadioButton = new JRadioButton();
 
         answerButtonGroup = new ButtonGroup();
         answerButtonGroup.add(option1RadioButton);
@@ -65,14 +67,11 @@ public class QuizMultipleChoiceView implements QuizObserver {
         submitButton = new JButton("Submit");
         submitButton.setFont(new Font("Arial", Font.BOLD, 16));
         submitButton.setAlignmentX(Component.CENTER_ALIGNMENT);
-        submitButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String answer = getSelectedAnswer();
+        submitButton.addActionListener(e -> {
+            String answer = getSelectedAnswer();
 
-                controller.submitAnswer(answer);
-                clearSelectedAnswer();
-            }
+            controller.submitAnswer(answer);
+            clearSelectedAnswer();
         });
 
         mainPanel.add(titleLabel);
@@ -81,6 +80,7 @@ public class QuizMultipleChoiceView implements QuizObserver {
         mainPanel.add(option2RadioButton);
         mainPanel.add(option3RadioButton);
         mainPanel.add(option4RadioButton);
+        mainPanel.add(option5RadioButton);
         mainPanel.add(Box.createVerticalStrut(10));
         mainPanel.add(submitButton);
 
@@ -97,6 +97,8 @@ public class QuizMultipleChoiceView implements QuizObserver {
             return "2";
         } else if (option4RadioButton.isSelected()) {
             return "3";
+        } else if (option5RadioButton.isSelected()) {
+            return "4";
         } else {
             return "nothing";
         }
@@ -113,6 +115,7 @@ public class QuizMultipleChoiceView implements QuizObserver {
         option2RadioButton.setText(options[1]);
         option3RadioButton.setText(options[2]);
         option4RadioButton.setText(options[3]);
+        option5RadioButton.setText(options[4]);
     }
 
     public void displayScore(int score) {

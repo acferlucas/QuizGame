@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root xmlns="http://java.sun.com/JSP/Page" version="1.2">
+    <questions>
+        <question>
+            <statement>Normalmente, quantos litros de sangue uma pessoa tem? Em média, quantos são retirados numa doação de sangue?</statement>
+            <options>
+                <option>Tem entre 2 a 4 litros. São retirados 450 mililitros;</option>
+                <option>Tem entre 4 a 6 litros. São retirados 450 mililitros;</option>
+                <option>Tem 10 litros. São retirados 2 litros;</option>
+                <option>Tem 7 litros. São retirados 1,5 litros;</option>
+                <option>Tem 0,5 litros. São retirados 0,5 litros;</option>
+            </options>
+            <answerIndex>1</answerIndex>
+        </question>
+        <question>
+            <statement>De quem é a famosa frase “Penso, logo existo”?</statement>
+            <options>
+                <option>Platão;</option>
+                <option>Galileu Galilei;</option>
+                <option>Descartes;</option>
+                <option>Sócrates;</option>
+                <option>Francis Bacon;</option>
+            </options>
+            <answerIndex>2</answerIndex>
+        </question>
+        <question>
+            <statement>De onde é a invenção do chuveiro elétrico?</statement>
+            <options>
+                <option>França;</option>
+                <option>Inglaterra;</option>
+                <option>Brasil;</option>
+                <option>Austrália;</option>
+                <option>Itália;</option>
+            </options>
+            <answerIndex>2</answerIndex>
+        </question>
+        <question>
+            <statement>Qual o menor e o maior país do mundo?</statement>
+            <options>
+                <option>Vaticano e Rússia;</option>
+                <option>Nauru e China;</option>
+                <option>Mônaco e Canadá;</option>
+                <option>Malta e Estados Unidos;</option>
+                <option>São Marino e Índia;</option>
+            </options>
+            <answerIndex>0</answerIndex>
+        </question>
+        <question>
+            <statement>Qual o livro mais vendido no mundo a seguir à Bíblia?</statement>
+            <options>
+                <option>O Senhor dos Anéis;</option>
+                <option>Dom Quixote;</option>
+                <option>O Pequeno Príncipe;</option>
+                <option>Ela, a Feiticeira;</option>
+                <option>Um Conto de Duas Cidades;</option>
+            </options>
+            <answerIndex>1</answerIndex>
+        </question>
+        <question>
+            <statement>Quantas casas decimais tem o número pi?</statement>
+            <options>
+                <option>Duas;</option>
+                <option>Centenas;</option>
+                <option>Milhares;</option>
+                <option>Vinte;</option>
+                <option>Infinitas;</option>
+            </options>
+            <answerIndex>4</answerIndex>
+        </question>
+        <question>
+            <statement> Quais os países que têm a maior e a menor expectativa de vida do mundo?</statement>
+            <options>
+                <option>Japão e Serra Leoa;</option>
+                <option>Austrália e Afeganistão;</option>
+                <option>Itália e Chade;</option>
+                <option>Brasil e Congo;</option>
+                <option>Estados Unidos e Angola;</option>
+            </options>
+            <answerIndex>0</answerIndex>
+        </question>
+        <question>
+            <statement>O que a palavra legend significa em português?</statement>
+            <options>
+                <option>Legenda;</option>
+                <option>Conto;</option>
+                <option>História;</option>
+                <option>Lenda;</option>
+                <option>Legendário;</option>
+            </options>
+            <answerIndex>3</answerIndex>
+        </question>
+        <question>
+            <statement>Quais as duas datas que são comemoradas em novembro?</statement>
+            <options>
+                <option>Independência do Brasil e Dia da Bandeira;</option>
+                <option>Proclamação da República e Dia Nacional da Consciência Negra;</option>
+                <option>Dia do Médico e Dia de São Lucas;</option>
+                <option>Dia de Finados e Dia Nacional do Livro;</option>
+                <option>Black Friday e Dia da Árvore;</option>
+            </options>
+            <answerIndex>1</answerIndex>
+        </question>
+        <question>
+            <statement>Qual o número mínimo de jogadores em cada time numa partida de futebol?</statement>
+            <options>
+                <option>8;</option>
+                <option>10;</option>
+                <option>9;</option>
+                <option>5;</option>
+                <option>7;</option>
+            </options>
+            <answerIndex>4</answerIndex>
+        </question>
+    </questions>
+</root>

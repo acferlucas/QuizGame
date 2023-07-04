@@ -20,8 +20,8 @@ public class QuizOpenQuestionsView implements QuizObserver {
     public QuizOpenQuestionsView() {
         frame = new JFrame("Quiz Game");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(450, 200);
-        frame.setResizable(false);
+        frame.setSize(700, 200);
+        frame.setResizable(true);
         initComponents();
         //frame.pack();
         frame.setLocationRelativeTo(null);
@@ -58,14 +58,11 @@ public class QuizOpenQuestionsView implements QuizObserver {
         submitButton = new JButton("Submit");
         submitButton.setFont(new Font("Arial", Font.BOLD, 16));
         submitButton.setAlignmentX(Component.CENTER_ALIGNMENT);
-        submitButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String answer = answerTextField.getText();
-                controller.submitAnswer(answer);
+        submitButton.addActionListener(e -> {
+            String answer = answerTextField.getText();
+            controller.submitAnswer(answer);
 
-                answerTextField.setText("");
-            }
+            answerTextField.setText("");
         });
 
         mainPanel.add(titleLabel);

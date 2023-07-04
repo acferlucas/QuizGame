@@ -4,8 +4,6 @@ import br.com.ifpe.edu.recife.controller.MenuController;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class QuizMenuView {
     private JFrame frame;
@@ -46,7 +44,7 @@ public class QuizMenuView {
         optionLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         optionLabel.setBorder(BorderFactory.createEmptyBorder(0, 0, 10, 0));
 
-        textQuizCheckBox = new JCheckBox("perguntas e respostas");
+        textQuizCheckBox = new JCheckBox("Perguntas e respostas");
         textQuizCheckBox.setAlignmentX(Component.CENTER_ALIGNMENT);
         textQuizCheckBox.setFont(new Font("Arial", Font.PLAIN, 16));
 
@@ -61,15 +59,12 @@ public class QuizMenuView {
         submitButton = new JButton("Submit");
         submitButton.setFont(new Font("Arial", Font.BOLD, 16));
         submitButton.setAlignmentX(Component.CENTER_ALIGNMENT);
-        submitButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                boolean  isTextQuizSelected = textQuizCheckBox.isSelected();
-                boolean isMultipleChoiceQuiz = multipleChoiceQuizCheckBox.isSelected();
+        submitButton.addActionListener(e -> {
+            boolean  isTextQuizSelected = textQuizCheckBox.isSelected();
+            boolean isMultipleChoiceQuiz = multipleChoiceQuizCheckBox.isSelected();
 
-                controller.start(isTextQuizSelected, isMultipleChoiceQuiz);
-            }
-        } );
+            controller.start(isTextQuizSelected, isMultipleChoiceQuiz);
+        });
 
         mainPanel.add(titleLabel);
         mainPanel.add(optionLabel);
@@ -81,7 +76,7 @@ public class QuizMenuView {
 
         frame.add(mainPanel);
         frame.setVisible(true);
-    };
+    }
 
     public void close() {
         this.frame.dispose();

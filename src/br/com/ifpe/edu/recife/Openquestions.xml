@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root xmlns="http://java.sun.com/JSP/Page" version="1.2">
+    <questions>
+        <question>
+            <statement>Qual o nome do presidente do Brasil que ficou conhecido como Jango?</statement>
+            <answer>João Goulart</answer>
+        </question>
+        <question>
+            <statement>Qual o livro mais vendido no mundo?</statement>
+            <answer>Bíblia</answer>
+        </question>
+        <question>
+            <statement>Qual personagem folclórico possui um gorro vermelho?</statement>
+            <answer>Saci</answer>
+        </question>
+        <question>
+            <statement>Plutão é correlato romano de qual deus grego?</statement>
+            <answer>Hades</answer>
+        </question>
+        <question>
+            <statement>Qual nome da substância que os seres humanos respiram?</statement>
+            <answer>Oxigênio</answer>
+        </question>
+        <question>
+            <statement>Quem viveu, segundo a Bíblia, 969 anos?</statement>
+            <answer>Matusalém</answer>
+        </question>
+        <question>
+            <statement>Qual país foi responsável pelo inicio da Segunda Guerra Mundial?</statement>
+            <answer>Alemanha</answer>
+        </question>
+        <question>
+            <statement>Qual fruta envenenada comeu a Branca de Neve?</statement>
+            <answer>Maçã</answer>
+        </question>
+        <question>
+            <statement>Qual é a cor das famosas cabines telefônicas de Londres?</statement>
+            <answer>Vermelho</answer>
+        </question>
+        <question>
+            <statement>Nos contos de fadas, qual animal que, quando é beijado, vira um príncipe?</statement>
+            <answer>Sapo</answer>
+        </question>
+    </questions>
+</root>
