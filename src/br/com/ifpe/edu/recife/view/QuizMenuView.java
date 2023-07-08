@@ -19,7 +19,7 @@ public class QuizMenuView {
     public QuizMenuView() {
         frame = new JFrame("Quiz Game");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(450, 250);
+        frame.setSize(450, 280);
         frame.setResizable(false);
         initComponents();
         frame.setLocationRelativeTo(null);
@@ -62,8 +62,9 @@ public class QuizMenuView {
         submitButton.addActionListener(e -> {
             boolean  isTextQuizSelected = textQuizCheckBox.isSelected();
             boolean isMultipleChoiceQuiz = multipleChoiceQuizCheckBox.isSelected();
+            boolean isTrueFalseQuiz = trueFalseQuizCheckBox.isSelected();
 
-            controller.start(isTextQuizSelected, isMultipleChoiceQuiz);
+            controller.start(isTextQuizSelected, isMultipleChoiceQuiz, isTrueFalseQuiz);
         });
 
         mainPanel.add(titleLabel);

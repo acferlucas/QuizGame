@@ -2,6 +2,7 @@ package br.com.ifpe.edu.recife.controller;
 
 import br.com.ifpe.edu.recife.model.QuizModel;
 import br.com.ifpe.edu.recife.view.QuizMenuView;
+import br.com.ifpe.edu.recife.view.QuizTrueFalseView;
 
 public class Quiz {
     public static void main(String[] args) {
@@ -30,6 +31,9 @@ public class Quiz {
         QuizMenuView menuview = new QuizMenuView();
         MenuController menuController = new MenuController(model, menuview);
         menuview.setController(menuController);
+
+        //QuizTrueFalseView view = new QuizTrueFalseView();
+
 
 
        // QuizOpenQuestionsView gameView = new QuizOpenQuestionsView();

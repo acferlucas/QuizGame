@@ -30,7 +30,7 @@ public class QuizQuestionsFactory {
                     Node answerNode = answer.item(i);
                     questions.add(new AnswerQuizStrategy(statementNode.getTextContent(), answerNode.getTextContent()));
                 }
-            } else {
+            } else if(type.equals("multiple")) {
                 document = builder.parse("src/br/com/ifpe/edu/recife/MultipleChoiceQuestions.xml");
 
                 NodeList statement = document.getElementsByTagName("statement");
@@ -48,9 +48,21 @@ public class QuizQuestionsFactory {
                     questions.add(new MultipleChoiceQuizStrategy(statementNode.getTextContent()
                             , optionList.toArray(new String[0]), Integer.parseInt(answerNode.getTextContent())));
                 }
+            }else if(type.equals("trueFalse")) {
+                document = builder.parse("src/br/com/ifpe/edu/recife/TrueFalsequestions.xml");
+
+                NodeList statement = document.getElementsByTagName("statement");
+                NodeList answer = document.getElementsByTagName("answerValue");
+
+                for (int i = 0; i < statement.getLength(); i++) {
+                    Node statementNode = statement.item(i);
+                    Node answerNode = answer.item(i);
+                    questions.add(new TrueFalseQuizStrategy(statementNode.getTextContent(), Boolean.parseBoolean(answerNode.getTextContent())));
+                }
             }
             Collections.shuffle(questions);
             return questions;
+
         } catch (Exception e) {
             e.printStackTrace();
         }

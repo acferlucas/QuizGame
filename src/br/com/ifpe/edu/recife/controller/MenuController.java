@@ -6,12 +6,14 @@ import br.com.ifpe.edu.recife.quiz.QuizQuestionsFactory;
 import br.com.ifpe.edu.recife.view.QuizMenuView;
 import br.com.ifpe.edu.recife.view.QuizOpenQuestionsView;
 import br.com.ifpe.edu.recife.view.QuizMultipleChoiceView;
+import br.com.ifpe.edu.recife.view.QuizTrueFalseView;
 
 public class MenuController {
     private QuizMenuView view;
     private QuizModel model;
     private QuizOpenQuestionsView gameView;
     private QuizMultipleChoiceView quizMultipleChoiceView;
+    private QuizTrueFalseView quizTrueFalseView;
 
     public MenuController(QuizModel model, QuizMenuView view) {
         this.model = model;
@@ -31,25 +33,32 @@ public class MenuController {
            QuizMultipleChoiceController quizMultipleChoiceController = new QuizMultipleChoiceController(model, quizMultipleChoiceView);
             model.registerObserver(this.quizMultipleChoiceView);
             quizMultipleChoiceController.startQuiz();
-        }else {
-            System.out.println("default option selected");
+        }else if(quizType.equals("trueFalse")){
+            this.quizTrueFalseView = new QuizTrueFalseView();
+            QuizTrueFalseController quizTrueFalseController = new QuizTrueFalseController(model,quizTrueFalseView);
+            model.registerObserver(this.quizTrueFalseView);
+            quizTrueFalseController.startQuiz();
         }
 
         view.close();
     }
 
-    public void start(boolean isTextQuizSelected, boolean isMultipleChoiceQuiz) {
-        String quizType;
+    public void start(boolean isTextQuizSelected, boolean isMultipleChoiceQuiz,  boolean isTrueFalseQuiz) {
+        String quizType = null;
 
         if(isTextQuizSelected) {
             quizType = "regular";
         }else if(isMultipleChoiceQuiz) {
             quizType = "multiple";
-        }else {
-            quizType = "default";
+        }else if(isTrueFalseQuiz) {
+            quizType = "trueFalse";
         }
 
-        model.setQuestions(new QuizQuestionsFactory().createQuestions(quizType));
-        this.loadGameView(quizType);
+        if(quizType != null) {
+            model.setQuestions(new QuizQuestionsFactory().createQuestions(quizType));
+            this.loadGameView(quizType);
+        }
+
+
     }
 }
