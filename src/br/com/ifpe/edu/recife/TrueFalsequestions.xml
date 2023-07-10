@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root xmlns="http://java.sun.com/JSP/Page" version="1.2">
+    <questions>
+        <question>
+            <statement>O relâmpago é visto antes de ser ouvido porque a luz viaja mais rápido que o som.</statement>
+            <answerValue>true</answerValue>
+        </question>
+        <question>
+            <statement>O crânio é o osso mais forte do corpo humano.</statement>
+            <answerValue>false</answerValue>
+        </question>
+        <question>
+            <statement>O Google foi inicialmente chamado de BackRub.</statement>
+            <answerValue>true</answerValue>
+        </question>
+        <question>
+            <statement>A caixa preta em um avião é preta.</statement>
+            <answerValue>false</answerValue>
+        </question>
+        <question>
+            <statement>Os smartphones com tela sensível ao toque foram inventados pela Apple.</statement>
+            <answerValue>false</answerValue>
+        </question>
+        <question>
+            <statement>O protocolo HTTPS significa "Hypertext Transfer Protocol Secure" e é utilizado para garantir a segurança das comunicações na internet.</statement>
+            <answerValue>true</answerValue>
+        </question>
+        <question>
+            <statement>O código-fonte de um software é a versão executável do programa.</statement>
+            <answerValue>false</answerValue>
+        </question>
+        <question>
+            <statement>A tecnologia de armazenamento SSD (Solid State Drive) é mais lenta do que um disco rígido tradicional.</statement>
+            <answerValue>false</answerValue>
+        </question>
+        <question>
+            <statement>O Linux é um sistema operacional baseado no kernel do Windows.</statement>
+            <answerValue>false</answerValue>
+        </question>
+        <question>
+            <statement>O conceito de "Internet das Coisas" (IoT) se refere à interconexão de dispositivos físicos através da internet, permitindo a troca de dados e controle remoto.</statement>
+            <answerValue>true</answerValue>
+        </question>
+    </questions>
+</root>
