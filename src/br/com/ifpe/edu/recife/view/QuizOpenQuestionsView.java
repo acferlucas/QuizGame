@@ -14,6 +14,7 @@ public class QuizOpenQuestionsView implements QuizObserver {
     private JLabel questionLabel;
     private JTextField answerTextField;
     private JButton submitButton;
+    private JButton backMenuButton;
 
     private QuizOpenQuestionsController controller;
 
@@ -58,18 +59,34 @@ public class QuizOpenQuestionsView implements QuizObserver {
         submitButton = new JButton("Submit");
         submitButton.setFont(new Font("Arial", Font.BOLD, 16));
         submitButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        // Botão de voltar
+        backMenuButton = new JButton("Voltar");
+        backMenuButton.setFont(new Font("Arial", Font.BOLD, 16));
+        backMenuButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        // Criação do panel para alinhar horizontalmente os botões de submit e voltar
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
+        buttonPanel.add(submitButton);
+        buttonPanel.add(Box.createRigidArea(new Dimension(10, 0)));
+        buttonPanel.add(backMenuButton);
+
         submitButton.addActionListener(e -> {
             String answer = answerTextField.getText();
             controller.submitAnswer(answer);
-
             answerTextField.setText("");
+        });
+
+        backMenuButton.addActionListener(e -> {
+            controller.handlerBackMenuButton(this.frame);
         });
 
         mainPanel.add(titleLabel);
         mainPanel.add(questionLabel);
         mainPanel.add(answerTextField);
         mainPanel.add(Box.createVerticalStrut(4));
-        mainPanel.add(submitButton);
+        mainPanel.add(buttonPanel); // Adiciona o panel de botões ao mainPanel
 
         frame.add(mainPanel);
         frame.setVisible(true);
@@ -93,5 +110,9 @@ public class QuizOpenQuestionsView implements QuizObserver {
     @Override
     public void onQuizCompleted(int score) {
         displayScore(score);
+    }
+
+    public Component getFrame() {
+        return this.frame;
     }
 }

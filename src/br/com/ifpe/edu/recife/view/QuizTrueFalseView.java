@@ -15,6 +15,7 @@ public class QuizTrueFalseView implements QuizObserver {
     private JRadioButton trueOption;
     private JRadioButton falseOption;
     private JButton submitButton;
+    private JButton backMenuButton;
     private QuizTrueFalseController controller;
 
     public QuizTrueFalseView() {
@@ -56,7 +57,7 @@ public class QuizTrueFalseView implements QuizObserver {
         falseOption = new JRadioButton();
         falseOption.setText("Falso");
 
-        JPanel radioButtonPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        JPanel radioButtonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER)); // Align radio buttons at the center
         radioButtonPanel.add(trueOption);
         radioButtonPanel.add(falseOption);
 
@@ -75,19 +76,37 @@ public class QuizTrueFalseView implements QuizObserver {
                 answer = "false";
             }
 
-           controller.submitAnswer(answer);
+            controller.submitAnswer(answer);
             answerButtonGroup.clearSelection();
         });
+
+        backMenuButton = new JButton("Voltar");
+        backMenuButton.setFont(new Font("Arial", Font.BOLD, 16));
+        backMenuButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+        backMenuButton.addActionListener(e -> {
+            controller.handlerBackMenuButton(this.frame);
+        });
+
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
+        buttonPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        buttonPanel.add(submitButton);
+        buttonPanel.add(Box.createRigidArea(new Dimension(10, 0)));
+        buttonPanel.add(backMenuButton);
 
         mainPanel.add(titleLabel);
         mainPanel.add(questionLabel);
         mainPanel.add(radioButtonPanel);
-        mainPanel.add(Box.createVerticalGlue()); // Centraliza verticalmente
-        mainPanel.add(submitButton);
+        mainPanel.add(Box.createVerticalGlue());
+        mainPanel.add(buttonPanel);
 
         frame.add(mainPanel);
         frame.pack();
         frame.setVisible(true);
+    }
+
+    public JFrame getFrame() {
+        return this.frame;
     }
 
 
