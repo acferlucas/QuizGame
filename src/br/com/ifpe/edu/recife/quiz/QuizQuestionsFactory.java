@@ -61,11 +61,18 @@ public class QuizQuestionsFactory {
                 }
             }
             Collections.shuffle(questions);
+            organizeEnunciate(questions);
             return questions;
 
         } catch (Exception e) {
             e.printStackTrace();
         }
         return Collections.emptyList();
+    }
+
+    private void organizeEnunciate(List<QuizStrategy> list){
+        for(int i = 1 ; i < 11; i++){
+            list.get(i-1).setQuestion(i + "- " + list.get(i -1).getQuestion());
+        }
     }
 }

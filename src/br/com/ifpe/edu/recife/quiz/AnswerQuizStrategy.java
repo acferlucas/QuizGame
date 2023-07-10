@@ -15,6 +15,11 @@ public class AnswerQuizStrategy implements QuizStrategy{
     }
 
     @Override
+    public void setQuestion(String question) {
+        this.question = question;
+    }
+
+    @Override
     public boolean checkAnswer(String userAnswer) {
         return userAnswer.equalsIgnoreCase(answer);
     }

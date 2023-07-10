@@ -1,12 +1,11 @@
 package br.com.ifpe.edu.recife.view;
+
 import br.com.ifpe.edu.recife.controller.QuizOpenQuestionsController;
 import br.com.ifpe.edu.recife.quiz.QuizObserver;
 import br.com.ifpe.edu.recife.quiz.QuizStrategy;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class QuizOpenQuestionsView implements QuizObserver {
     private JFrame frame;
@@ -78,9 +77,7 @@ public class QuizOpenQuestionsView implements QuizObserver {
             answerTextField.setText("");
         });
 
-        backMenuButton.addActionListener(e -> {
-            controller.handlerBackMenuButton(this.frame);
-        });
+        backMenuButton.addActionListener(e -> controller.handlerBackMenuButton(this.frame));
 
         mainPanel.add(titleLabel);
         mainPanel.add(questionLabel);

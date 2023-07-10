@@ -41,5 +41,45 @@
             <statement>O conceito de "Internet das Coisas" (IoT) se refere à interconexão de dispositivos físicos através da internet, permitindo a troca de dados e controle remoto.</statement>
             <answerValue>true</answerValue>
         </question>
+        <question>
+            <statement>A atmosfera de Mercúrio é composta de dióxido de carbono.</statement>
+            <answerValue>false</answerValue>
+        </question>
+        <question>
+            <statement>A depressão é a principal causa de incapacidade em todo o mundo.</statement>
+            <answerValue>true</answerValue>
+        </question>
+        <question>
+            <statement>A Cidade do Vaticano é um país.</statement>
+            <answerValue>true</answerValue>
+        </question>
+        <question>
+            <statement>Melbourne é a capital da Austrália.</statement>
+            <answerValue>false</answerValue>
+        </question>
+        <question>
+            <statement>A penicilina foi descoberta no Vietnã para tratar a malária.</statement>
+            <answerValue>false</answerValue>
+        </question>
+        <question>
+            <statement>O Monte Fuji é a montanha mais alta do Japão.</statement>
+            <answerValue>true</answerValue>
+        </question>
+        <question>
+            <statement>Brócolis contém mais vitamina C do que limões.</statement>
+            <answerValue>true</answerValue>
+        </question>
+        <question>
+            <statement>Cleópatra era descendente de egípcios</statement>
+            <answerValue>false</answerValue>
+        </question>
+        <question>
+            <statement>Você pode espirrar enquanto dorme.</statement>
+            <answerValue>false</answerValue>
+        </question>
+        <question>
+            <statement>Bananas são bagas.</statement>
+            <answerValue>true</answerValue>
+        </question>
     </questions>
 </root>

@@ -15,6 +15,11 @@ public class TrueFalseQuizStrategy implements QuizStrategy {
     }
 
     @Override
+    public void setQuestion(String question) {
+        this.question = question;
+    }
+
+    @Override
     public boolean checkAnswer(String userAnswer) {
 
         boolean userResponse = Boolean.parseBoolean(userAnswer);

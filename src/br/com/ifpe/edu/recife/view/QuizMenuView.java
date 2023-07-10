@@ -42,9 +42,7 @@ public class QuizMenuView {
 
         textQuizButton = new JButton("Perguntas e respostas");
         textQuizButton.setFont(new Font("Arial", Font.PLAIN, 16));
-        textQuizButton.addActionListener(e -> {
-            controller.start("regular");
-        });
+        textQuizButton.addActionListener(e -> controller.start("regular"));
 
         multipleChoiceQuizButton = new JButton("Multipla Escolha");
         multipleChoiceQuizButton.setFont(new Font("Arial", Font.PLAIN, 16));

@@ -4,7 +4,6 @@ import br.com.ifpe.edu.recife.quiz.QuizObserver;
 import br.com.ifpe.edu.recife.quiz.QuizStrategy;
 import br.com.ifpe.edu.recife.quiz.QuizSubject;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class QuizModel implements QuizSubject {
@@ -15,7 +14,7 @@ public class QuizModel implements QuizSubject {
 
     // Constructor
     public QuizModel() {
-        questions = new QuizStrategy[5];
+        questions = new QuizStrategy[10];
         score = 0;
         currentQuestionIndex = 0;
     }
@@ -25,7 +24,7 @@ public class QuizModel implements QuizSubject {
     }
 
     public void setQuestions(List<QuizStrategy> questions) {
-        this.questions = questions.subList(0,5).toArray(new QuizStrategy[0]);
+        this.questions = questions.subList(0,10).toArray(new QuizStrategy[0]);
     }
 
     public int getScore() {

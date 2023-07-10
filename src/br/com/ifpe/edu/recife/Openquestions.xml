@@ -41,5 +41,45 @@
             <statement>Nos contos de fadas, qual animal que, quando é beijado, vira um príncipe?</statement>
             <answer>Sapo</answer>
         </question>
+        <question>
+            <statement>Qual a montanha mais alta do mundo?</statement>
+            <answer>Monte Everest</answer>
+        </question>
+        <question>
+            <statement>Qual País se localiza a cidade de Machu Picchu?</statement>
+            <answer>Peru</answer>
+        </question>
+        <question>
+            <statement>Que país tem o formato de uma bota?</statement>
+            <answer>Itália</answer>
+        </question>
+        <question>
+            <statement>Um anel tem 3 pedras preciosas. Quantas pedras preciosas têm 11 anéis?(Resposta em números)</statement>
+            <answer>33</answer>
+        </question>
+        <question>
+            <statement>Quantos continentes existem?(Resposta em números)</statement>
+            <answer>6</answer>
+        </question>
+        <question>
+            <statement>Qual a personagem mais famosa de Maurício de Sousa?</statement>
+            <answer>Mônica</answer>
+        </question>
+        <question>
+            <statement>Que cidade brasileira é conhecida por chover todos os dias quase à mesma hora?</statement>
+            <answer>Belém</answer>
+        </question>
+        <question>
+            <statement>O que é maior: gigabyte ou megabyte?</statement>
+            <answer>Gigabyte</answer>
+        </question>
+        <question>
+            <statement>Que animal põe o maior ovo?</statement>
+            <answer>Avestruz</answer>
+        </question>
+        <question>
+            <statement>O que os pandas comem?</statement>
+            <answer>Bambu</answer>
+        </question>
     </questions>
 </root>

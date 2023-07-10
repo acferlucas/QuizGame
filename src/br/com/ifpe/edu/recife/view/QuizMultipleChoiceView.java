@@ -7,8 +7,6 @@ import br.com.ifpe.edu.recife.quiz.QuizStrategy;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class QuizMultipleChoiceView implements QuizObserver {
     private JFrame frame;
@@ -118,9 +116,7 @@ public class QuizMultipleChoiceView implements QuizObserver {
             clearSelectedAnswer();
         });
 
-        backMenuButton.addActionListener(e -> {
-            controller.handlerBackMenuButton(this.frame);
-        });
+        backMenuButton.addActionListener(e -> controller.handlerBackMenuButton(this.frame));
 
         frame.add(mainPanel);
         frame.setVisible(true);

@@ -111,5 +111,126 @@
             </options>
             <answerIndex>4</answerIndex>
         </question>
+        <question>
+            <statement>Quem foi a primeira pessoa a viajar no Espaço?</statement>
+            <options>
+                <option>Yuri Gagarin;</option>
+                <option>A cadela Laika;</option>
+                <option>Neil Armstrong;</option>
+                <option>Marcos Pontes;</option>
+                <option>Buzz Aldrin;</option>
+            </options>
+            <answerIndex>0</answerIndex>
+        </question>
+        <question>
+            <statement>Quem inventou a lâmpada?</statement>
+            <options>
+                <option>Graham Bell;</option>
+                <option>Steve Jobs;</option>
+                <option>Thomas Edison;</option>
+                <option>Henry Ford;</option>
+                <option>Santos Dumont;</option>
+            </options>
+            <answerIndex>2</answerIndex>
+        </question>
+        <question>
+            <statement>Quanto tempo a Terra demora para dar uma volta completa em torno dela mesma?</statement>
+            <options>
+                <option>Aproximadamente 24 horas;</option>
+                <option>365 dias;</option>
+                <option>7 dias;</option>
+                <option>365 ou 366 dias;</option>
+                <option>30 ou 31 dias;</option>
+            </options>
+            <answerIndex>0</answerIndex>
+        </question>
+        <question>
+            <statement> A que temperatura a água ferve?</statement>
+            <options>
+                <option>200 ºC;</option>
+                <option>-10 ºC;</option>
+                <option>180 ºC;</option>
+                <option>0 ºC;</option>
+                <option>100 ºC;</option>
+            </options>
+            <answerIndex>4</answerIndex>
+        </question>
+        <question>
+            <statement>Quais são as fases da Lua?</statement>
+            <options>
+                <option>Nova, cheia e superlua;</option>
+                <option>Penumbral, lunar parcial, lunar total e cheia;</option>
+                <option>Nova, cheia, minguante e lua de sangue;</option>
+                <option>Nova, crescente, cheia e minguante;</option>
+                <option>Nova, crescente, cheia, minguante e lua de sangue;</option>
+            </options>
+            <answerIndex>3</answerIndex>
+        </question>
+        <question>
+            <statement>Quantos ossos temos no nosso corpo?</statement>
+            <options>
+                <option>126;</option>
+                <option>206;</option>
+                <option>18;</option>
+                <option>300;</option>
+                <option>200;</option>
+            </options>
+            <answerIndex>1</answerIndex>
+        </question>
+        <question>
+            <statement>Qual a maior floresta tropical do mundo?</statement>
+            <options>
+                <option>Mata Atlântica;</option>
+                <option>Pampas;</option>
+                <option>Pantanal;</option>
+                <option>Floresta Amazônica;</option>
+                <option>Caatinga;</option>
+            </options>
+            <answerIndex>3</answerIndex>
+        </question>
+        <question>
+            <statement>Quais as duas línguas mais faladas no mundo?</statement>
+            <options>
+                <option>Inglês e espanhol;</option>
+                <option>Inglês e mandarim chinês;</option>
+                <option>Mandarim chinês e francês;</option>
+                <option>Inglês e português;</option>
+                <option>Inglês e Latim;</option>
+            </options>
+            <answerIndex>1</answerIndex>
+        </question>
+        <question>
+            <statement>Qual o monumento famoso pela sua inclinação?</statement>
+            <options>
+                <option>Torre Eiffel;</option>
+                <option>Esfinge;</option>
+                <option>Estátua da Liberdade;</option>
+                <option>Cristo Redentor;</option>
+                <option>Torre de Pisa;</option>
+            </options>
+            <answerIndex>4</answerIndex>
+        </question>
+        <question>
+            <statement>Kryptonita é a fraqueza de qual super-herói?</statement>
+            <options>
+                <option>Batman;</option>
+                <option>Hulk;</option>
+                <option>Super-Homem;</option>
+                <option>Capitão América;</option>
+                <option>Flash;</option>
+            </options>
+            <answerIndex>2</answerIndex>
+        </question>
+        <question>
+            <statement>O que representam os cinco anéis olímpicos?</statement>
+            <options>
+                <option>As partes do mundo unidas pelo Olimpismo;</option>
+                <option>As argolas da ginástica artística;</option>
+                <option>Cinco tipos de esporte: de rede, de campo, de combate, de precisão, de invasão;</option>
+                <option>Cinco deuses do Olimpo: Zeus, Atena, Apolo, Dionísio e Hermes;</option>
+                <option>Os símbolos olímpicos: tocha, hino, mascote, lema e medalhas;</option>
+            </options>
+            <answerIndex>0</answerIndex>
+        </question>
     </questions>
 </root>
