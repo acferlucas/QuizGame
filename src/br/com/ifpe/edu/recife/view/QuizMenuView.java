@@ -9,11 +9,9 @@ public class QuizMenuView {
     private JFrame frame;
     private JLabel titleLabel;
     private JLabel optionLabel;
-    private JButton submitButton;
-    private JCheckBox multipleChoiceQuizCheckBox;
-    private JCheckBox textQuizCheckBox;
-    private JCheckBox trueFalseQuizCheckBox;
-
+    private JButton textQuizButton;
+    private JButton multipleChoiceQuizButton;
+    private JButton trueFalseQuizButton;
     private MenuController controller;
 
     public QuizMenuView() {
@@ -31,55 +29,50 @@ public class QuizMenuView {
 
     public void initComponents() {
         JPanel mainPanel = new JPanel();
-        mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
+        mainPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
         mainPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
         titleLabel = new JLabel("Bem-Vindo ao Quiz Game !");
         titleLabel.setFont(new Font("Arial", Font.BOLD, 24));
-        titleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         titleLabel.setBorder(BorderFactory.createEmptyBorder(0, 0, 20, 0));
 
         optionLabel = new JLabel("Selecione um o tipo de quiz abaixo :");
         optionLabel.setFont(new Font("Arial", Font.PLAIN, 18));
-        optionLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         optionLabel.setBorder(BorderFactory.createEmptyBorder(0, 0, 10, 0));
 
-        textQuizCheckBox = new JCheckBox("Perguntas e respostas");
-        textQuizCheckBox.setAlignmentX(Component.CENTER_ALIGNMENT);
-        textQuizCheckBox.setFont(new Font("Arial", Font.PLAIN, 16));
+        textQuizButton = new JButton("Perguntas e respostas");
+        textQuizButton.setFont(new Font("Arial", Font.PLAIN, 16));
+        textQuizButton.addActionListener(e -> {
+            controller.start("regular");
+        });
 
-        multipleChoiceQuizCheckBox = new JCheckBox("Multipla Escolha");
-        multipleChoiceQuizCheckBox.setAlignmentX(Component.CENTER_ALIGNMENT);
-        multipleChoiceQuizCheckBox.setFont(new Font("Arial", Font.PLAIN, 16));
+        multipleChoiceQuizButton = new JButton("Multipla Escolha");
+        multipleChoiceQuizButton.setFont(new Font("Arial", Font.PLAIN, 16));
+        multipleChoiceQuizButton.addActionListener(e -> {
+            controller.start("multiple");
+        });
 
-        trueFalseQuizCheckBox = new JCheckBox("Verdadeiro e falso");
-        trueFalseQuizCheckBox.setAlignmentX(Component.CENTER_ALIGNMENT);
-        trueFalseQuizCheckBox.setFont(new Font("Arial", Font.PLAIN, 16));
-
-        submitButton = new JButton("Submit");
-        submitButton.setFont(new Font("Arial", Font.BOLD, 16));
-        submitButton.setAlignmentX(Component.CENTER_ALIGNMENT);
-        submitButton.addActionListener(e -> {
-            boolean  isTextQuizSelected = textQuizCheckBox.isSelected();
-            boolean isMultipleChoiceQuiz = multipleChoiceQuizCheckBox.isSelected();
-            boolean isTrueFalseQuiz = trueFalseQuizCheckBox.isSelected();
-
-            controller.start(isTextQuizSelected, isMultipleChoiceQuiz, isTrueFalseQuiz);
+        trueFalseQuizButton = new JButton("Verdadeiro e falso");
+        trueFalseQuizButton.setFont(new Font("Arial", Font.PLAIN, 16));
+        trueFalseQuizButton.addActionListener(e -> {
+            controller.start("trueFalse");
         });
 
         mainPanel.add(titleLabel);
         mainPanel.add(optionLabel);
-        mainPanel.add(textQuizCheckBox);
-        mainPanel.add(multipleChoiceQuizCheckBox);
-        mainPanel.add(trueFalseQuizCheckBox);
-        mainPanel.add(Box.createVerticalStrut(4));
-        mainPanel.add(submitButton);
+        mainPanel.add(textQuizButton);
+        mainPanel.add(multipleChoiceQuizButton);
+        mainPanel.add(trueFalseQuizButton);
 
         frame.add(mainPanel);
         frame.setVisible(true);
     }
 
     public void close() {
-        this.frame.dispose();
+        this.frame.setVisible(false);
+    }
+
+    public void open() {
+        this.frame.setVisible(true);
     }
 }

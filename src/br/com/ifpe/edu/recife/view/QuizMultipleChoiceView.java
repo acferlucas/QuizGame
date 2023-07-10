@@ -21,6 +21,7 @@ public class QuizMultipleChoiceView implements QuizObserver {
     private JRadioButton option4RadioButton;
     private JRadioButton option5RadioButton;
     private JButton submitButton;
+    private JButton backMenuButton;
     private QuizMultipleChoiceController controller;
 
     public QuizMultipleChoiceView() {
@@ -90,9 +91,26 @@ public class QuizMultipleChoiceView implements QuizObserver {
         submitButton.setFont(new Font("Arial", Font.BOLD, 16));
         constraints.gridx = 0;
         constraints.gridy = 7;
-        constraints.gridwidth = 2;
-        constraints.anchor = GridBagConstraints.CENTER; // Define o alinhamento horizontal como centro
+        constraints.gridwidth = 1;
+        constraints.anchor = GridBagConstraints.CENTER;
         mainPanel.add(submitButton, constraints);
+
+        backMenuButton = new JButton("Voltar");
+        backMenuButton.setFont(new Font("Arial", Font.BOLD, 16));
+        constraints.gridx = 1;
+        constraints.anchor = GridBagConstraints.CENTER;
+        mainPanel.add(backMenuButton, constraints);
+
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
+        buttonPanel.add(submitButton);
+        buttonPanel.add(Box.createRigidArea(new Dimension(10, 0)));
+        buttonPanel.add(backMenuButton);
+
+        constraints.gridy = 8;
+        constraints.gridx = 0;
+        constraints.gridwidth = 2;
+        mainPanel.add(buttonPanel, constraints);
 
         submitButton.addActionListener(e -> {
             String answer = getSelectedAnswer();
@@ -100,12 +118,13 @@ public class QuizMultipleChoiceView implements QuizObserver {
             clearSelectedAnswer();
         });
 
+        backMenuButton.addActionListener(e -> {
+            controller.handlerBackMenuButton(this.frame);
+        });
+
         frame.add(mainPanel);
         frame.setVisible(true);
     }
-
-
-
     private String getSelectedAnswer() {
         if (option1RadioButton.isSelected()) {
             return "0";
@@ -150,5 +169,9 @@ public class QuizMultipleChoiceView implements QuizObserver {
     @Override
     public void onQuizCompleted(int score) {
         displayScore(score);
+    }
+
+    public Component getFrame() {
+        return this.frame;
     }
 }
