@@ -54,6 +54,6 @@ public class QuizQuestionsFactory {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return null;
+        return Collections.emptyList();
     }
 }
