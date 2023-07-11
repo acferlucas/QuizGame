@@ -2,7 +2,7 @@ package br.com.ifpe.edu.recife.controller;
 
 
 import br.com.ifpe.edu.recife.model.QuizModel;
-import br.com.ifpe.edu.recife.quiz.QuizQuestionsFactory;
+import br.com.ifpe.edu.recife.quiz.QuizQuestionsInstantiation;
 import br.com.ifpe.edu.recife.view.QuizMenuView;
 import br.com.ifpe.edu.recife.view.QuizOpenQuestionsView;
 import br.com.ifpe.edu.recife.view.QuizMultipleChoiceView;
@@ -45,7 +45,7 @@ public class MenuController {
 
     public void start(String quizType) {
         if(quizType != null) {
-            model.setQuestions(new QuizQuestionsFactory().createQuestions(quizType));
+            model.setQuestions(new QuizQuestionsInstantiation().createQuestions(quizType));
             this.loadGameView(quizType);
         }
 

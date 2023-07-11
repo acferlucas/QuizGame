@@ -83,9 +83,7 @@ public class QuizTrueFalseView implements QuizObserver {
         backMenuButton = new JButton("Voltar");
         backMenuButton.setFont(new Font("Arial", Font.BOLD, 16));
         backMenuButton.setAlignmentX(Component.CENTER_ALIGNMENT);
-        backMenuButton.addActionListener(e -> {
-            controller.handlerBackMenuButton(this.frame);
-        });
+        backMenuButton.addActionListener(e -> controller.handlerBackMenuButton(this.frame));
 
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));

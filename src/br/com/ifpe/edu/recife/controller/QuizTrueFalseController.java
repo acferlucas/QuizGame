@@ -1,7 +1,6 @@
 package br.com.ifpe.edu.recife.controller;
 
 import br.com.ifpe.edu.recife.model.QuizModel;
-import br.com.ifpe.edu.recife.quiz.MultipleChoiceQuizStrategy;
 import br.com.ifpe.edu.recife.quiz.QuizStrategy;
 import br.com.ifpe.edu.recife.quiz.TrueFalseQuizStrategy;
 import br.com.ifpe.edu.recife.view.QuizMenuView;

@@ -46,15 +46,11 @@ public class QuizMenuView {
 
         multipleChoiceQuizButton = new JButton("Multipla Escolha");
         multipleChoiceQuizButton.setFont(new Font("Arial", Font.PLAIN, 16));
-        multipleChoiceQuizButton.addActionListener(e -> {
-            controller.start("multiple");
-        });
+        multipleChoiceQuizButton.addActionListener(e -> controller.start("multiple"));
 
         trueFalseQuizButton = new JButton("Verdadeiro e falso");
         trueFalseQuizButton.setFont(new Font("Arial", Font.PLAIN, 16));
-        trueFalseQuizButton.addActionListener(e -> {
-            controller.start("trueFalse");
-        });
+        trueFalseQuizButton.addActionListener(e -> controller.start("trueFalse"));
 
         mainPanel.add(titleLabel);
         mainPanel.add(optionLabel);
