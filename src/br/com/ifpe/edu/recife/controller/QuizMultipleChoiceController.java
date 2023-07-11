@@ -38,6 +38,7 @@ public class QuizMultipleChoiceController {
 
     public void handlerBackMenuButton(JFrame frame) {
         frame.dispose();
+        model.reset();
         menu.open();
     }
 }

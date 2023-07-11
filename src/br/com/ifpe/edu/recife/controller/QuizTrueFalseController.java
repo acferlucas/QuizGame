@@ -39,6 +39,7 @@ public class QuizTrueFalseController {
 
     public void handlerBackMenuButton(JFrame frame) {
         frame.dispose();
+        model.reset();
         menu.open();
     }
 }

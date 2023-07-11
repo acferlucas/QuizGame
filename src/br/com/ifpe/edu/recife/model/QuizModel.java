@@ -48,6 +48,13 @@ public class QuizModel implements QuizSubject {
         notifyObserver();
     }
 
+    public void reset() {
+        questions = null;
+        questions = new QuizStrategy[10];
+        score = 0;
+        currentQuestionIndex = 0;
+    }
+
     @Override
     public void registerObserver(QuizObserver o) {
         this.quizObserver = o;
