@@ -14,6 +14,9 @@ import java.util.List;
 
 public class TrueOrFalseQuestionsFactory {
 
+    protected TrueOrFalseQuestionsFactory() {
+    }
+
     public static List<TrueFalseQuizStrategy> instantiate(DocumentBuilder builder) throws IOException, SAXException {
         Document document = builder.parse("src/br/com/ifpe/edu/recife/TrueFalsequestions.xml");
 

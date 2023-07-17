@@ -2,7 +2,6 @@ package br.com.ifpe.edu.recife.controller;
 
 import br.com.ifpe.edu.recife.model.QuizModel;
 import br.com.ifpe.edu.recife.view.QuizMenuView;
-import br.com.ifpe.edu.recife.view.QuizTrueFalseView;
 
 public class Quiz {
     public static void main(String[] args) {

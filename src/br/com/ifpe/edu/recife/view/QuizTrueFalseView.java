@@ -20,7 +20,7 @@ public class QuizTrueFalseView implements QuizObserver {
 
     public QuizTrueFalseView() {
         frame = new JFrame("Quiz Game");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setSize(700, 200);
         frame.setResizable(true);
 
@@ -120,5 +120,6 @@ public class QuizTrueFalseView implements QuizObserver {
     @Override
     public void onQuizCompleted(int score) {
         displayScore(score);
+        this.controller.handlerBackMenuButton(this.frame);
     }
 }

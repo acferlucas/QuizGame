@@ -14,6 +14,9 @@ import java.util.List;
 
 public class OpenQuestionsFactory {
 
+    protected OpenQuestionsFactory() {
+    }
+
     public static List<AnswerQuizStrategy> instantiate(DocumentBuilder builder) throws IOException, SAXException {
         Document document = builder.parse("src/br/com/ifpe/edu/recife/Openquestions.xml");
 

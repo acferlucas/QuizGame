@@ -17,12 +17,10 @@ public class QuizQuestionsInstantiation {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
 
-            if (type.equals("regular")) {
-                questions.addAll(OpenQuestionsFactory.instantiate(builder));
-            } else if (type.equals("multiple")) {
-                questions.addAll(MultipleChoiceQuestionsFactory.instantiate(builder));
-            } else if (type.equals("trueFalse")) {
-                questions.addAll(TrueOrFalseQuestionsFactory.instantiate(builder));
+            switch (type) {
+                case "regular" -> questions.addAll(OpenQuestionsFactory.instantiate(builder));
+                case "multiple" -> questions.addAll(MultipleChoiceQuestionsFactory.instantiate(builder));
+                case "trueFalse" -> questions.addAll(TrueOrFalseQuestionsFactory.instantiate(builder));
             }
 
             enumerateQuestions(questions);

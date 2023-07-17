@@ -165,6 +165,7 @@ public class QuizMultipleChoiceView implements QuizObserver {
     @Override
     public void onQuizCompleted(int score) {
         displayScore(score);
+        this.controller.handlerBackMenuButton(this.frame);
     }
 
     public Component getFrame() {

@@ -15,6 +15,8 @@ import java.util.List;
 
 public class MultipleChoiceQuestionsFactory {
 
+    protected MultipleChoiceQuestionsFactory(){}
+
     public static List<MultipleChoiceQuizStrategy> instantiate(DocumentBuilder builder) throws IOException, SAXException {
         Document document = builder.parse("src/br/com/ifpe/edu/recife/MultipleChoiceQuestions.xml");
 
